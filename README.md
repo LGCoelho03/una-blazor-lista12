@@ -61,10 +61,3 @@ public int Peso { get; set; }
 ## 📷 Print do programa funcionando
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2449cce8-43b8-45eb-93cf-fd233e5ca9ad" />
-
-
-## 📌 Conclusão
-
-Este projeto demonstrou, na prática, como utilizar componentes reutilizáveis no Blazor, manipular estado e aplicar conceitos de UX para criar interfaces interativas e responsivas.
-
----
