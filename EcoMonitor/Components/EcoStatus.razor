@@ -1,0 +1,87 @@
+@code {
+    [Parameter]
+    public required string NomeAcao { get; set; }
+
+    [Parameter]
+    public int Peso { get; set; }
+
+    private int total = 0;
+
+    private void Incrementar()
+    {
+        total += Peso;
+    }
+
+    private string CorBorda()
+    {
+        return total >= 50 ? "#198754" : "#0d6efd";
+    }
+    private string CorBadge()
+    {
+        return total >= 50 ? "#198754" : "#0d6efd";
+    }
+}
+
+<div class="card" style="border-left: 5px solid @CorBorda();">
+    <h4>@NomeAcao</h4>
+
+    <p>Pontos por ação: <strong>@Peso</strong></p>
+
+    <p>Total acumulado:</p>
+
+    <span class="badge" style="background:@CorBadge();">
+    @total
+    </span>
+
+    <button @onclick="Incrementar">
+        Registrar Atividade
+    </button>
+
+    @if (total >= 100)
+    {
+        <p class="hero">
+            🏆 Meta batida!<br />
+            Você é um Herói do Planeta!
+        </p>
+    }
+</div>
+
+<style>
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.badge {
+    display: inline-block;
+    background: #0d6efd;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #198754;
+    background: transparent;
+    color: #198754;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #198754;
+    color: white;
+}
+
+.hero {
+    margin-top: 10px;
+    color: #198754;
+    font-weight: bold;
+}
+</style>

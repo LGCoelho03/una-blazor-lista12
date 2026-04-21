@@ -1,0 +1,21 @@
+@page "/"
+
+<h1 style="text-align:center;">🌍 EcoMonitor</h1>
+<p style="text-align:center;">
+    Transformando pequenas ações em grande impacto ambiental.
+</p>
+
+<div class="grid">
+    <EcoStatus NomeAcao="Reciclagem de Plástico" Peso="1" />
+    <EcoStatus NomeAcao="Descarte de Eletrônicos" Peso="5" />
+    <EcoStatus NomeAcao="Plantio de Árvores" Peso="10" />
+</div>
+
+<style>
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+</style>
